@@ -2,9 +2,24 @@
 > 创建这个项目的原因是自己菜,经常记不住很多不常有的API,以及不常使用的方法,但是有时确非常的有用  
 > 因此欢迎大家也在里面添加内容,一个人的力量是有限的,但是众人的力量确实不可估量的
 # 开始进入正题
-## 一.TV适配 
-### 1. 判断是否是TV
-- 1.通过UIModeManager
+## 一、TV适配 
+### 1、判断是否是TV
+- 1. 通过UIModeManager
 ```
 UIModeManager.getCurrentModeType() == Configuration.UI_MODE_TYPE_TELEVISION
+```
+- 2. 通过PackageManager的SystemFeature判断
+```
+getPackageManager().hasSystemFeature(PackageManager.FEATURE_TELEVISION)
+//如果大于5.0 
+getPackageManager().hasSystemFeature(PackageManager.FEATURE_LEANBACK)
+```
+- 3. 创建values-television,创建bool值判断
+```
+//values-television 文件夹下的xml文件
+<bool name="isTelevision">true</bool>
+//values 文件夹下的xml文件
+<bool name="isTelevision">false</bool>
+//判断
+getResources().getBoolean(R.bool.isTelevision)
 ```
