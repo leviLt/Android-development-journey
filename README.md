@@ -32,8 +32,37 @@ Build.MODEL.toLowerCase().contains("tv")
 ```
 目前通过上诉的方式基本上都可以判断是否是TV,包含亚马逊的Fire TV、以及国产的TV、盒子等等
 ### 二、Android 开发如果都不知道点常用的ADB调试,一看就不专业
-> 下面我就列举一些我们最常用的,ADB调试有很多强大的功能,如果想要好好的研究,我贴下链接![ADB](https://developer.android.com/studio/command-line/adb?hl=zh-cn)
+> 下面我就列举一些我们最常用的,ADB调试有很多强大的功能,如果想要好好的研究,我贴下链接[ADB](https://developer.android.com/studio/command-line/adb?hl=zh-cn)
 - 1.查看当前连接设备
 ```
 adb devices
 ```
+- 2.如果有多个设备那就需要指定设备名字
+ ```
+ // adb -s [设备名字] 指令
+ adb -s deviceName install xxx.apk
+ ```
+ - 3.查看日志
+ ```
+ adb logcat
+ ```
+ - 4.安装APK
+ ```
+ adb install xxx.apk
+ //如果已经存
+ adb install -r xxx.apk
+ ```
+ - 5.卸载APK
+ ```
+ adb uninstall 包名
+ ```
+ - 6.上传、下载文件
+ ```
+ //上传文件
+ adb push 文件 存放位置
+ 例:
+ adb push aa.jpg /sdcard/  把aa.jpg这张图片上传到sdcard路径下
+ //下载文件
+ adb pull /sdcard/aa.jpg /Library/  把sdcard下的aa这张图片下载到电脑的library下面
+ ```
+ - 7.有时候我们需要查看手机安装的所有app,不清楚
