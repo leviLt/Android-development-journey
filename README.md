@@ -54,6 +54,13 @@ Build.MODEL.toLowerCase().contains("tv")
 手机拉取到电脑  adb pull remote local
 
 ```
- 
+- 2.ADB 下的AM和PM
+AM :ActivityManager 看意思就是和Activity相关的指令
+
+```
+启动app am start -n {packageName}/.{activityName}
+eg:adb shell am start -n com.example.lt/.MainActivity 
+```
+PM :PackageManager  和包相关(install/uninstall...)
  
  
