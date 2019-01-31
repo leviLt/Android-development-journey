@@ -34,34 +34,52 @@ Build.MODEL.toLowerCase().contains("tv")
 ### 二、Android 开发如果都不知道点常用的ADB调试,一看就不专业
 > 下面我就列举一些我们最常用的,ADB调试有很多强大的功能,如果想要好好的研究,我贴下链接[ADB](https://developer.android.com/studio/command-line/adb?hl=zh-cn)
 - 1.基本指令集
-```
-进入指定设备    adb -s serialNumber shell
+   ```
+   进入指定设备    adb -s serialNumber shell
 
-查看版本       adb version
+   查看版本       adb version
 
-查看日志       adb logcat
+   查看日志       adb logcat
 
-查看设备       adb devices
+   查看设备       adb devices
 
-连接状态       adb get-state
+   连接状态       adb get-state
 
-启动ADB服务    adb start-server
+   启动ADB服务    adb start-server
 
-停止ADB服务    adb kill-server
+   停止ADB服务    adb kill-server
 
-电脑推送到手机  adb push local remote
+   电脑推送到手机  adb push local remote
 
-手机拉取到电脑  adb pull remote local
+   手机拉取到电脑  adb pull remote local
+   
+   安装           adb install -r xxx.apk
+   
+   卸载           adb uninstall <packages>
 
-```
+   ```
 - 2.ADB 下的AM和PM
 
    AM :ActivityManager 看意思就是和Activity相关的指令
 
    ```
-   启动app am start -n {packageName}/.{activityName}
-   eg:adb shell am start -n com.example.lt/.MainActivity 
+   启动Activity        adb shell am start -n com.example.lt/.MainActivity (加入参数在后面添加:-e key value)
+      
+   杀app的进程          adb shell am force-stop com.example.lt
+   
+   打开网页             adb shell am start -a anroid.intent.action.VIEW -d "https://www.google.com"
+   
+   发送广播             adb shell am broadcast -a "xxx.action"
+   
+   
+   
    ```
    PM :PackageManager  和包相关(install/uninstall...)
- 
- 
+   ```
+   清空缓存数据      adb shell pm clear com.example.lt
+   
+   查看所有的包名     adb shell pm list packages
+   ```
+ - 3.输入事件
+   
+   适配TV的经常要
