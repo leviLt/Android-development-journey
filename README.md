@@ -56,6 +56,8 @@ Build.MODEL.toLowerCase().contains("tv")
    安装           adb install -r xxx.apk
    
    卸载           adb uninstall <packages>
+   
+   查看进程        adb shell ps
 
    ```
 - 2.ADB 下的AM和PM
@@ -82,4 +84,32 @@ Build.MODEL.toLowerCase().contains("tv")
    ```
  - 3.输入事件
    
-   适配TV的经常要
+   适配TV的经常要输入一些文字、字符串等等,在遥控器上是很不方便的,这个时候就需要到了:
+   ```
+   输入框输入字符     adb shell input text "dasdsdasdasd"
+   
+   ```
+ - 4.dumpsys 
+ 
+   dumpsys 是一个非常强大的命令，它可以提供非常多的系统信息
+   ```
+   查看电池信息                   adb shell dumpsys battery
+   
+   查看Activity信息              adb shell dumpsys activity
+   
+   查看正在运行的activity         adb shell dumpsys activity | grep -i "run" (忽略大小写,带有run)
+   
+   查看APP有哪些进程              adb shell dumpsys activity p <包名>
+   
+   查看APP有哪些进程过滤掉         adb shell dumpsys activity p <包名> | grep -i "PID" | grep -i "proccess"
+   
+   note : adb shell dumpsys activity 后面添加 a、p、s  分别对应:activty、proccess、service
+   
+   ```
+ - 5.录屏、截屏
+ 
+   ```
+   截屏               adb shell screencap <路径/sdcard/xxx.png>
+   
+   录屏               adb shell screenrecord <路径/sdcard/xxx.mp4>
+   ```    
