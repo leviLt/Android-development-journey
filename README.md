@@ -113,3 +113,7 @@ Build.MODEL.toLowerCase().contains("tv")
    
    录屏               adb shell screenrecord <路径/sdcard/xxx.mp4>
    ```    
+- 三、数据结构(即使是做Android 你也应该知道些数据结构相关的知识)
+
+  - 1.什么是数据结构?
+      
