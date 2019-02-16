@@ -146,4 +146,13 @@ Build.MODEL.toLowerCase().contains("tv")
   **3.主要有两个方法:prepare(context)和 VpnService.Builder.establish().**
     
     前者创建新的VPN连接以及断开其他VPN连接,后者创建VPN连接的接口的参数
+    
+  **4.步骤**
+  
+    1. 当用户按下按钮进行连接时，调用prepare(Context) 并启动返回的intent，如果非null。
+    2. 准备好应用程序后，启动该服务。
+    3. 创建到远程服务器的隧道，并协商VPN连接的网络参数
+    4. 将这些参数提供给一个VpnService.Builder并通过调用创建VPN接口VpnService.Builder.establish()。
+    5. 在隧道和返回的文件描述符之间处理和交换数据包
+    6. 当onRevoke()被调用时，关闭文件描述符并正常关闭隧道。
 
