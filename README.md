@@ -125,4 +125,6 @@ Build.MODEL.toLowerCase().contains("tv")
   1.vim 查找关键词  使用“/”+“回车”,如果要继续查看,按大些“N”
   2.
   ```
-      
+- ### 五、android VPN相关
+
+  1.核心类-vpnService Android系统
