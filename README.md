@@ -127,11 +127,11 @@ Build.MODEL.toLowerCase().contains("tv")
   ```
 - ### 五、android VPN相关
 
-  *1.核心类-vpnService Android系统专门用于VPN的服务类([官方地址]*(https://developer.android.google.cn/reference/android/net/VpnService))
+  **1.核心类-vpnService Android系统专门用于VPN的服务类([官方地址](https://developer.android.google.cn/reference/android/net/VpnService))**
   
     VpnService是应用程序扩展和构建自己的VPN解决方案的基类,通常会通过创建虚拟网络接口、配置地址和路由规则并将文件配置描述规则返回给APP.读取的每个包都检索一个路由到接口的传出数据包,接口在internet协议(IP)上运行,因此始终使用IP标头启动数据包,应用程序通过隧道处理和运程服务器之间交换数据来完成VPN连接
     
-  *2.注意:*
+  **2.注意:**
   
     Note1:应用程序拦截数据包有很大的安全问题,VPN容易破坏网络.
   
@@ -143,7 +143,7 @@ Build.MODEL.toLowerCase().contains("tv")
     
     Note5:系统管理的对话框提供当前VPN连接的信息。它还提供了一个断开连接的按钮
     
-  *3.主要有两个方法:prepare(context)和 VpnService.Builder.establish().*
+  **3.主要有两个方法:prepare(context)和 VpnService.Builder.establish().**
     
     前者创建新的VPN连接以及断开其他VPN连接,后者创建VPN连接的接口的参数
 
