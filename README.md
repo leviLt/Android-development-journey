@@ -113,8 +113,16 @@ Build.MODEL.toLowerCase().contains("tv")
    
    录屏               adb shell screenrecord <路径/sdcard/xxx.mp4>
    ```    
-- 三、数据结构(即使是做Android 你也应该知道些数据结构相关的知识)
+- ### 三、数据结构(即使是做Android 你也应该知道些数据结构相关的知识)
 
   1.什么是数据结构?
     计算机存储、组织
+    
+- ### 四、android 开发者也需要知道的命令行(windows、mac)
+
+  1.MAC 命令
+  ```
+  1.vim 查找关键词  使用“/”+“回车”,如果要继续查看,按大些“N”
+  2.
+  ```
       
